@@ -1,0 +1,31 @@
+Funky The Prowler: Character Register es un programa simple que se usa para almacenar los personajes
+que yo escriba para mi manga, registrando:
+-Identificador (Automático por si se requiere eliminar después)
+-Alias (Si/No)
+De ser no, entonces solicitar un nombre y apellido
+-Nombre
+-Apellido
+-Edad
+-Detalle breve del personaje
+
+========================================================================================================
+
+¿Qué funcionalidades quiero?
+-Al ingresar será guardado en un archivo plano
+-De eliminarse el personaje deberá eliminarse también del archivo plano
+-Si se intenta ingresar un personaje con nombre ya existente entonces se avisa y se pide ingresar de nuevo
+-Buscar un personaje por su nombre (sea alias o nombre)
+-El programa leerá el archivo al ejecutar el programa
+-Mostrar un informe general (Abrir archivo plano) de todos los personajes ingresados
+
+========================================================================================================
+
+¿Qué usaremos?
+-Listas Simples
+-Validación de entradas
+-Menú interactivo con flechitas
+
+=========================================================================================================
+
+Nota: Esto hay que updetearlo xd, así que... manos a la obra!
+
