@@ -21,33 +21,33 @@ class Personaje {
         Personaje(short int id, std::string alias, std::string nombre, std::string apellido, std::string fechaNacimiento, short int edad, sexo genero, float altura, float peso): id(id), alias(alias), nombre(nombre), apellido(apellido), edad(edad), genero(genero), altura(altura), peso(peso) {};
 
         //Getters y setters
-        short int getId(){return id;};
-        void setId(short int id){this->id = id;};
+        short int getId();
 
-        std::string getAlias(){return alias;};
-        void setAlias(std::string alias){this->alias = alias;};
+        std::string getAlias();
 
-        std::string getNombre(){return nombre;};
-        void setNombre(std::string nombre){this->nombre = nombre;};
+        std::string getNombre();
         
-        std::string getApellido(){return apellido;};
-        void setApellido(std::string apellido){this->apellido = apellido;};
+        std::string getApellido();
 
-        std::string getFechaNacimiento(){return fechaNacimiento;};
-        void setFechaNacimiento(std::string fechaNacimiento){this->fechaNacimiento = fechaNacimiento;};
+        std::string getFechaNacimiento();
 
-        sexo getGenero(){return genero;};
-        void setGenero(sexo genero){this->genero = genero;};
+        sexo getGenero();
 
-        short int getEdad(){return edad;};
-        void setEdad(short int edad){this->edad = edad;};
+        short int getEdad();
 
-        float getAltura(){return altura;};
-        void setAltura(float altura){this->altura = altura;};
+        float getAltura();
 
-        float getPeso(){return peso;};
-        void setPeso(float peso){this->peso = peso;};
+        float getPeso();
 
+        void setAlias(std::string alias);
+
+        void setNombre(std::string nombre);
+
+        void setApellido(std::string apellido);
+
+        void setFechaNacimiento(std::string fechaNacimiento);
+
+        void setGenero(sexo genero);
 
         void autoIdPersonaje();
         sexo seleccionarSexo();
