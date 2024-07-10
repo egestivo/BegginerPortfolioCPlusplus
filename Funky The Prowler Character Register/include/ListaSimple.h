@@ -22,9 +22,35 @@ class ListaSimple{
         void setCola(Nodo* cola){this->cola = cola;};
 
         void insertarNodo(Personaje* personaje);
-        void mostrarLista();
-        void eliminarNodo(short int id);
-        void buscarNodo(short int id);
+        
+        //Funciones específicas del menu
+        //Registrar personaje
+        void registrarPersonaje();
+
+        //Buscar por alias
+        void buscarPorAlias(const std::string& alias);
+
+        //Buscar por nombre
+        void buscarPorNombre(const std::string& nombre);
+
+        //Buscar personaje por Alias o nombre según la elección
+        void buscarPersonaje(const std::string& criterioBusqueda);
+
+        //Eliminar por alias
+        void eliminarPorAlias(const std::string& alias);
+
+        //Eliminar por nombre
+        void eliminarPorNombre(const std::string& nombre);
+
+        //Eliminar principal para llamar por alias o nombre
+        void eliminarPersonaje();
+
+        //Mostrar todos los personajes
+        void mostrarPersonajes();
+
+        //mostrar todos los personajes masculinos o femeninos
+        void mostrarPersonajesPorSexo();
+
 };
 
 

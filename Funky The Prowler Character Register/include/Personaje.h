@@ -39,20 +39,29 @@ class Personaje {
 
         float getPeso();
 
-        void setAlias(std::string alias);
+        void setId(const short int& id);
 
-        void setNombre(std::string nombre);
+        void setAlias(const std::string& alias);
 
-        void setApellido(std::string apellido);
+        void setNombre(const std::string& nombre);
 
-        void setFechaNacimiento(std::string fechaNacimiento);
+        void setApellido(const std::string& apellido);
 
-        void setGenero(sexo genero);
+        void setFechaNacimiento(const std::string& fechaNacimiento);
+
+        void setGenero(const sexo& genero);
+
+        void setEdad(const short int& edad);
+
+        void setAltura(const float& altura);
+
+        void setPeso(const float& peso);
 
         void autoIdPersonaje();
-        sexo seleccionarSexo();
         void ingresarPersonaje();
         void mostrarPersonaje();
+        void mostrarPersonajePorSexo(sexo genero);
+
         
 };
 

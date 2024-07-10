@@ -10,29 +10,40 @@
 
 class Validaciones{
     public:
-        //Validar alias, nombre y apellido
-        static std::string validarNombre();
 
-        //Validar fecha de nacimiento
-        static std::string validarFechaNacimiento();
+        // Validar nombre y apellido (sin caracteres especiales, solo letras)
+        static bool validarNombre(const std::string& nombre);
 
-        //Validar edad
-        static short int validarEdad();
-
-        //Validar altura
-        static float validarAltura();
-
-        //Validar peso
-        static float validarPeso();
-
-        // Leer entrada sin espacios ni letras (para c�dula)
-        static std::string leerCedula();
+        static std::string formatearNombre(const std::string& nombre);
 
         // Leer entrada sin n�meros ni espacios (para nombre y apellido)
         static std::string leerNombre();
+
+        //Validar fecha de nacimiento
+        static bool validarFechaNacimiento(const std::string& fecha);
+
+        //Leer entrada con un formato de fecha DD-MM-AAAA
+        static std::string leerFechaNacimiento();
+
+        //Validar edad
+        static bool validarEdad(const short int& edad);
+
+        //Leer entrada de edad hasta máximo 3 digitos
+        static short int leerEdad();
+
+        //Validar altura
+        static bool validarAltura(const float& altura);
+
+        //Leer entrada de la altura
+        static float leerAltura();
+
+        //Validar peso
+        static bool validarPeso(const float& peso);
+
+        //Leer entrada de peso
+        static float leerPeso();
         
     private:
-        static bool validarCaracter(const std::string& cedula);
 };
 
 
