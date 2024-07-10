@@ -42,6 +42,7 @@ int Menus::leerOpcion() {
 //Seleccion de la opción de las flechas de menuBuscar
 int Menus::leerOpcionBuscar() {
     int opcion = 1;
+    menuBuscar(opcion);
 
     while (true) {
         if (_kbhit()) {
@@ -51,10 +52,12 @@ int Menus::leerOpcionBuscar() {
                 case 72: // Flecha arriba
                     opcion--;
                     if (opcion < 1) opcion = 2;
+                    menuBuscar(opcion);
                     break;
                 case 80: // Flecha abajo
                     opcion++;
                     if (opcion > 2) opcion = 1;
+                    menuBuscar(opcion);
                     break;
                 case 13: // Enter
                     return opcion;
@@ -66,6 +69,7 @@ int Menus::leerOpcionBuscar() {
 //Leer opción para el menuAlias
 int Menus::leerOpcionAlias() {
     int opcion = 1;
+    menuAlias(opcion);
 
     while (true) {
         if (_kbhit()) {
@@ -75,10 +79,12 @@ int Menus::leerOpcionAlias() {
                 case 72: // Flecha arriba
                     opcion--;
                     if (opcion < 1) opcion = 2;
+                    menuAlias(opcion);
                     break;
                 case 80: // Flecha abajo
                     opcion++;
                     if (opcion > 2) opcion = 1;
+                    menuAlias(opcion);
                     break;
                 case 13: // Enter
                     return opcion;
@@ -90,6 +96,7 @@ int Menus::leerOpcionAlias() {
 //Leer opción para el menuBuscarPor
 int Menus::leerOpcionBusquedaPor() {
     int opcion = 1;
+    menuBusquedaPor(opcion);
 
     while (true) {
         if (_kbhit()) {
@@ -99,10 +106,12 @@ int Menus::leerOpcionBusquedaPor() {
                 case 72: // Flecha arriba
                     opcion--;
                     if (opcion < 1) opcion = 2;
+                    menuBusquedaPor(opcion);
                     break;
                 case 80: // Flecha abajo
                     opcion++;
                     if (opcion > 2) opcion = 1;
+                    menuBusquedaPor(opcion);
                     break;
                 case 13: // Enter
                     return opcion;
@@ -114,6 +123,7 @@ int Menus::leerOpcionBusquedaPor() {
 //Leer opción para el menuMostrarPor
 int Menus::leerOpcionMostrarPor() {
     int opcion = 1;
+    menuMostrarPor(opcion);
 
     while (true) {
         if (_kbhit()) {
@@ -123,10 +133,12 @@ int Menus::leerOpcionMostrarPor() {
                 case 72: // Flecha arriba
                     opcion--;
                     if (opcion < 1) opcion = 2;
+                    menuMostrarPor(opcion);
                     break;
                 case 80: // Flecha abajo
                     opcion++;
                     if (opcion > 2) opcion = 1;
+                    menuMostrarPor(opcion);
                     break;
                 case 13: // Enter
                     return opcion;
@@ -138,6 +150,7 @@ int Menus::leerOpcionMostrarPor() {
 //Leer opción para el menuSexo
 sexo Menus::leerOpcionSexo() {
     int opcion = 1;
+    menuSexo(opcion);
 
     while (true) {
         if (_kbhit()) {
@@ -147,10 +160,12 @@ sexo Menus::leerOpcionSexo() {
                 case 72: // Flecha arriba
                     opcion--;
                     if (opcion < 1) opcion = 2;
+                    menuSexo(opcion);
                     break;
                 case 80: // Flecha abajo
                     opcion++;
                     if (opcion > 2) opcion = 1;
+                    menuSexo(opcion);
                     break;
                 case 13: // Enter
                     return (sexo)opcion;
@@ -194,8 +209,7 @@ void Menus::menuBuscar(int opcionSeleccionada) {
 
 //Menu que retorna un entero para determinar si el personaje tiene Alias o no
 void Menus::menuAlias(int opcionSeleccionada) {
-    system("cls");
-    gotoxy(15, 2); cout << "==== ¿El personaje tiene alias? ====";
+    gotoxy(15, 2); cout << "\n==== ¿El personaje tiene alias? ====";
     gotoxy(15, 4); cout << (opcionSeleccionada == 1 ? "==>" : "   ") << "Si";
     gotoxy(15, 5); cout << (opcionSeleccionada == 2 ? "==>" : "   ") << "No";
     gotoxy(15, 7); cout << "===============================";
@@ -222,11 +236,10 @@ void Menus::menuMostrarPor(int opcionSeleccionada) {
 
 //Menu para seleccionar el sexo del personaje
 void Menus::menuSexo(int opcionSeleccionada) {
-    system("cls");
-    gotoxy(15, 2); cout << "==== ¿Cuál es el sexo del personaje? ====";
-    gotoxy(15, 4); cout << (opcionSeleccionada == 1 ? "==>" : "   ") << "Masculino";
-    gotoxy(15, 5); cout << (opcionSeleccionada == 2 ? "==>" : "   ") << "Femenino";
-    gotoxy(15, 7); cout << "===============================";
+    gotoxy(1, 12); cout << "==== ¿Cuál es el sexo del personaje? ====";
+    gotoxy(1, 14); cout << (opcionSeleccionada == 1 ? "==>" : "   ") << "Masculino";
+    gotoxy(1, 16); cout << (opcionSeleccionada == 2 ? "==>" : "   ") << "Femenino";
+    gotoxy(1, 20); cout << "===============================\n";
 }
 
 //Menu para buscar por genero

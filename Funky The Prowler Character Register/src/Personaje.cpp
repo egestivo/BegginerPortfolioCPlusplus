@@ -11,11 +11,6 @@
 //Variables globales de menus y validaciones
 Menus menus;
 Validaciones valid;
-//Constructor por defecto
-Personaje::Personaje(): id(0), alias("None"), nombre("None"), apellido("None"), fechaNacimiento("00-00-0000"), edad(0), genero(masculino), altura(0), peso(0) {};
-
-//Constructor con parametros
-Personaje::Personaje(short int id, std::string alias, std::string nombre, std::string apellido, std::string fechaNacimiento, short int edad, sexo genero, float altura, float peso): id(id), alias(alias), nombre(nombre), apellido(apellido), edad(edad), genero(genero), altura(altura), peso(peso) {};
 
 //Getters y setters
 short int Personaje::getId() {
@@ -103,11 +98,11 @@ void Personaje::ingresarPersonaje() {
     std::cout << "ID: " << id << std::endl;
     
     opcionAlias = menus.leerOpcionAlias();
-    menus.menuAlias(opcionAlias);
+    
     bool valido = false;
     if(opcionAlias == 1) {
         do {
-            std::cout << "Ingrese Alias: ";
+            std::cout << "\nIngrese Alias: ";
             nombre = valid.leerNombre();
             if (valid.validarNombre(nombre)) {
                 valido = true;
@@ -121,7 +116,7 @@ void Personaje::ingresarPersonaje() {
         } while (!valido);
     } else {
         do {
-            std::cout << "Ingrese Nombre: ";
+            std::cout << "\nIngrese Nombre: ";
             nombre = valid.leerNombre();
             if (valid.validarNombre(nombre)) {
                 valido = true;
@@ -160,7 +155,7 @@ void Personaje::ingresarPersonaje() {
 
     valido = false;
     do {
-        std::cout << "Ingrese Edad: ";
+        std::cout << std::endl ;
         edad = valid.leerEdad();
         if(valid.validarEdad(edad)) {
             valido = true;
@@ -168,13 +163,11 @@ void Personaje::ingresarPersonaje() {
         }
     } while (!valido);
 
-    opcionSexo = menus.leerOpcionSexo();
-    menus.menuSexo(opcionSexo);
     setGenero(menus.leerOpcionSexo());
 
     valido = false;
     do {
-        std::cout << "Ingrese Altura (en metros): ";
+        std::cout << std::endl;
         altura = valid.leerAltura();
         if(valid.validarAltura(altura)) {
             valido = true;
@@ -184,16 +177,34 @@ void Personaje::ingresarPersonaje() {
 
     valido = false;
     do {
-        std::cout << "Ingrese Peso (en kilogramos): ";
+        std::cout << std::endl;
         peso = valid.leerPeso();
         if(valid.validarPeso(peso)) {
             valido = true;
             setPeso(peso);
         }
     } while (!valido);
+}
 
-    Personaje* personaje = new Personaje(id, alias, nombre, apellido, fechaNacimiento, edad, genero, altura, peso);
-    
+//Función que muestra los personajes ingresados
+void Personaje::mostrarPersonaje() {
+    std::cout << "ID: " << id << std::endl;
+    std::cout << "Alias: " << alias << std::endl;
+    std::cout << "Nombre: " << nombre << std::endl;
+    std::cout << "Apellido: " << apellido << std::endl;
+    std::cout << "Fecha de Nacimiento: " << fechaNacimiento << std::endl;
+    std::cout << "Edad: " << edad << std::endl;
+    std::cout << "Genero: " << genero << std::endl;
+    std::cout << "Altura: " << altura << std::endl;
+    std::cout << "Peso: " << peso << std::endl;
+}
+
+int main(){
+    Personaje personaje;
+    personaje.ingresarPersonaje();
+    personaje.mostrarPersonaje();
+    return 0;
+
 }
 
 

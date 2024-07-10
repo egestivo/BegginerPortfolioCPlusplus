@@ -75,23 +75,36 @@ void ListaSimple::eliminarPorNombre(const std::string& nombre){
 }
 
 //Eliminar personaje por Alias o nombre según la elección
-void ListaSimple::eliminarPorAlias(){
+void ListaSimple::eliminarPersonaje(){
     Menus menu;
 
     int opcionSeleccionada = menu.leerOpcionBusquedaPor();
     menu.menuBusquedaPor(opcionSeleccionada);
     bool valido = false;
+    std::string argument;
     if (opcionSeleccionada == 1){
-        std::string alias;
         do {
-            std::cout << "Ingrese Alias: ";
-            alias = valid.leerNombre();
-            if (valid.validarNombre(alias)) {
+            std::cout << "Ingrese alias: ";
+            argument = valid.leerNombre();
+            if (valid.validarNombre(argument)) {
                 valido = true;
             }
             else {
                 std::cout << "Alias no valido. Intente nuevamente." << std::endl;
             }
         } while (!valido);
+        eliminarPorAlias(argument);
+    } else {
+        do {
+            std::cout << "Ingrese nombre: ";
+            argument = valid.leerNombre();
+            if (valid.validarNombre(argument)) {
+                valido = true;
+            }
+            else {
+                std::cout << "Nombre no valido. Intente nuevamente." << std::endl;
+            }
+        } while (!valido);
+        eliminarPorNombre(argument);
     }
 }
